@@ -23,6 +23,21 @@ const connectPlus = (array) => array.join("+")
 //  элементов в массиве.
 // Массив для примера:
 // let task5 = [4, 5, 5, 5, 3, 5, 2, 3, 1, 3, 4];
+function highestFrequency(array) {
+  const countItem = {}
+  let countMax = 0
+  let res = array[0]
+  for (let i = 0; i < array.length; i++) {
+      let current = array[i]
+      countItem[current] = countItem[current] ? countItem[current] + 1 : 1
+
+      if (countItem[current] >= countMax) {
+          countMax = countItem[current]
+          res = current
+      }
+  }
+  return res
+}
 
 // Задание №4
 // Создайте новый массив, в который возвращается объект, составленный из значений вложенных массивов. Первые элемент массива - ключ, второй - значение.
