@@ -50,13 +50,13 @@ function highestFrequency(array) {
 //     'b': 2
 // }
 
-function arrToMap(arr) {
-  const map = {}
-  for (let i = 0; i < arr.length; i++) {
-      map[arr[i][0]] = arr[i][1] 
-  }
-  return map
-}
+const arrToMap = (arr) => arr.reduce(
+  (prev, current) => {
+      return Object.assign(prev, {
+          [current[0]]: current[1]
+      })
+  },
+{});
 
 // //////////////////////  LOOP /////////////////////////////////////////////
 
