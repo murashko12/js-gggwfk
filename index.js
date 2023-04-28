@@ -50,6 +50,14 @@ function highestFrequency(array) {
 //     'b': 2
 // }
 
+function arrToMap(arr) {
+  const map = {}
+  for (let i = 0; i < arr.length; i++) {
+      map[arr[i][0]] = arr[i][1] 
+  }
+  return map
+}
+
 // //////////////////////  LOOP /////////////////////////////////////////////
 
 
@@ -83,6 +91,8 @@ function globalSum(num) {
 // Функция должна возвращать в какую четверть
 // часа попадает это число (в первую, вторую,
 // третью или четвертую).
+
+
 
 
 // Задание №8
