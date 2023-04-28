@@ -50,13 +50,24 @@ function highestFrequency(array) {
 //     'b': 2
 // }
 
-const arrToMap = (arr) => arr.reduce(
+
+function arrToMap1(arr) {
+  const map = {}
+  for (let i = 0; i < arr.length; i++) {
+      map[arr[i][0]] = arr[i][1] 
+  }
+  return map
+}
+
+const arrToMap2 = (arr) => arr.reduce(
   (prev, current) => {
       return Object.assign(prev, {
           [current[0]]: current[1]
       })
   },
 {});
+
+
 
 // //////////////////////  LOOP /////////////////////////////////////////////
 
@@ -65,10 +76,10 @@ const arrToMap = (arr) => arr.reduce(
 
 // Напишите цикл, который предлагает через prompt ввести число больше 100. Если пользователь ввёл другое число – попросить ввести ещё раз, и так далее.
 // Цикл должен спрашивать числа до тех пор пока пользователь не введёт число больше 100, либо не нажмёт кнопку Отмена (ESC).
-// do {
-//   num = prompt("Введите число больше 100?", 0);
-//   return num
-// } while (num <= 100 && num);
+do {
+  num = prompt("Введите число больше 100?", 0);
+  return num
+} while (num <= 100 && num);
 
 // Задание №6
 // Запросите у пользователя любое число num. Напишите цикл который находит сумму всех чисел от 1 до num, введенного пользователем.
@@ -91,7 +102,16 @@ function globalSum(num) {
 // Функция должна возвращать в какую четверть
 // часа попадает это число (в первую, вторую,
 // третью или четвертую).
-
+const quarter = (num) => {
+  switch(true) {
+      case num < 0: return 'На циферблате нет таких чисел'
+      case num <= 14: return 'первая'
+      case num <= 29: return 'вторая'
+      case num <= 44: return 'третья'
+      case num <= 59: return 'четвертая'
+      default: return 'На циферблате нет таких чисел'
+  }
+}
 
 
 
